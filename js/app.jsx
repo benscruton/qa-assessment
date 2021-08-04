@@ -88,7 +88,13 @@ var app = app || {};
 			var todos = this.props.model.todos;
 
 			var shownTodos = todos.filter(function (todo) {
-				return todo
+				if(this.state.nowShowing === "active"){
+					return !todo.completed;
+				}
+				if(this.state.nowShowing === "completed"){
+					return todo.completed;
+				}
+				return todo;
 			}, this);
 
 			var todoItems = shownTodos.map(function (todo) {
@@ -154,7 +160,7 @@ var app = app || {};
 						/>
 					</header>
 					{main}
-					{footer}
+					{todos.length ? footer : null}
 				</div>
 			);
 		}

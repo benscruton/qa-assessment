@@ -42,7 +42,7 @@ body {
 }
 
 .todoapp {
-	background: #fff;
+	background-color: #FEF3C7;
 	margin: 130px 0 40px 0;
 	position: relative;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
@@ -167,6 +167,10 @@ body {
 	width: calc(100% - 43px);
 	padding: 12px 16px;
 	margin: 0 0 0 43px;
+	background-color: #FEF3C7;
+	color: #888;
+	font-weight:300;
+	border: 1px solid #888;
 }
 
 .todo-list li.editing .view {
@@ -272,9 +276,9 @@ body {
 	height: 50px;
 	overflow: hidden;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
-	            0 8px 0 -3px #f6f6f6,
+	            0 8px 0 -3px #FEF3C7,
 	            0 9px 1px -3px rgba(0, 0, 0, 0.2),
-	            0 16px 0 -6px #f6f6f6,
+	            0 16px 0 -6px #FEF3C7,
 	            0 17px 2px -6px rgba(0, 0, 0, 0.2);
 }
 

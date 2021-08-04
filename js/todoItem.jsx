@@ -81,7 +81,7 @@ var app = app || {};
 					completed: this.props.todo.completed,
 					editing: this.props.editing
 				})}>
-					<div className="view">
+					<div className="view" onDoubleClick={this.handleEdit}>
 						<input
 							className="toggle"
 							type="checkbox"
