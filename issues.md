@@ -1,4 +1,4 @@
-# ALL ISSUES NOTICED:
+# ISSUES:
 
 
 # 1) Double-clicking to edit items not working
@@ -91,7 +91,7 @@ The background color of the list is white, rather than the pale yellow color (ap
 
 ## Proposed Solution:
 This can be solved by adjusting the appropriate CSS.  The relevant areas are:
-- .todoapp, specifically the background-color property (line 45)
+- `.todoapp`, specifically the background-color property (line 45)
 - `.todo-list li.editing .edit`, specifically the background-color property (line 170)
 - `.footer:before`, specifically the box-shadow property (originally lines 275 and 277, now lines 279 and 281)
 
