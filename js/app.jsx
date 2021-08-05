@@ -47,14 +47,16 @@ var app = app || {};
 			event.preventDefault();
 
 			var val = this.state.newTodo.trim();
+			if(!val){
+				return;
+			}
 
 			this.props.model.addTodo(val);
 			this.setState({newTodo: ''});
 		},
 
-		toggleAll: function (event) {
-			var checked = event.target.checked;
-			this.props.model.toggleAll(checked);
+		toggleAll: function () {
+			this.props.model.toggleAll();
 		},
 
 		toggle: function (todoToToggle) {

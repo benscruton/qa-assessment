@@ -22,11 +22,13 @@ var app = app || {};
 				);
 			}
 
+			var itemPluralized = app.Utils.pluralize(this.props.count, "item");
+
 			var nowShowing = this.props.nowShowing;
 			return (
 				<footer className="footer">
 					<span className="todo-count">
-						<strong>{this.props.count}</strong> items left
+						<strong>{this.props.count}</strong> {itemPluralized} left
 					</span>
 					<ul className="filters">
 						<li>

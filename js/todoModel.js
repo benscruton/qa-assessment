@@ -30,12 +30,12 @@ var app = app || {};
 
 	app.TodoModel.prototype.addTodo = function (title) {
 		this.todos = [
+			...this.todos,
 			{
 				id: Utils.uuid(),
 				title: title,
 				completed: false
-			},
-			...this.todos
+			}
 		];
 
 		this.inform();
@@ -46,8 +46,12 @@ var app = app || {};
 		// easier to reason about and React works very well with them. That's why
 		// we use map() and filter() everywhere instead of mutating the array or
 		// todo items themselves.
+
+		const numRemaining = this.todos.length - this.todos.filter(todo => todo.completed).length;
+		const newCompletedStatus = !!numRemaining;
+
 		this.todos = this.todos.map(function (todo) {
-			return Utils.extend({}, todo, {completed: !todo.completed});
+			return Utils.extend({}, todo, {completed: newCompletedStatus});
 		});
 
 		this.inform();
@@ -79,6 +83,10 @@ var app = app || {};
 		this.inform();
 	};
 
-	app.TodoModel.prototype.clearCompleted = function() {}
+	app.TodoModel.prototype.clearCompleted = function() {
+		this.todos = this.todos.filter(candidate =>!candidate.completed);
+
+		this.inform();
+	}
 
 })();

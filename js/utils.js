@@ -21,8 +21,8 @@ var app = app || {};
 			return uuid;
 		},
 
-		pluralize: function (count, word) {
-			return count === 1 ? word : word + 's';
+		pluralize: function (count, word, irregular = "") {
+			return count === 1 ? word : (irregular? irregular : word + 's');
 		},
 
 		store: function (namespace, data) {

@@ -234,13 +234,15 @@ body {
 	height: 40px;
 	margin: auto 0;
 	font-size: 30px;
-	color: #cc9a9a;
+	color: #ccc;
+	background-color: #8888;
+	border-radius: 100%;
 	margin-bottom: 11px;
 	transition: color 0.2s ease-out;
 }
 
 .todo-list li .destroy:hover {
-	color: #af5b5e;
+	color: #fff;
 }
 
 .todo-list li .destroy:after {
@@ -315,6 +317,10 @@ body {
 
 .filters li a:hover {
 	border-color: rgba(175, 47, 47, 0.1);
+}
+
+.filters li a.selected{
+	border-color: #bbb;
 }
 
 .clear-completed,
